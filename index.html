@@ -1,60 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="page.css" />
     <title>sbs.naic.org</title>
-  </head>
-  <script src="./page.js"></script>
-  <body>
-    <!-- <h1>sbs.naic.org</h1> -->
+</head>
+
+<body>
     <div class="header-logo">
-      <div>
-        <img src="naic-logo.png" alt="" />
-      </div>
+        <div>
+            <img src="naic-logo.png" alt="" />
+        </div>
     </div>
     <div class="title">
-      <img src="SOLAR_Header.jpg" alt="" />
-      <div class="titletext">
-        <p>State Based Systems Home | State Based Systems</p>
-      </div>
+        <img src="SOLAR_Header.jpg" alt="" />
+        <div class="titletext">
+            <p>State Based Systems Home | State Based Systems</p>
+        </div>
     </div>
     <div class="form">
-            <div class="lookup">Lookup Search</div>
-                <div class="jurisdiction">
-                <p>
-                    Jurisdiction
-                    <p class="required">Required</p>
-                </p>
+        <div class="lookup">Lookup Search</div>
+        <div class="jurisdiction">
+            <p>Jurisdiction<p class="required">Required</p></p>
+        </div>
+        <select name="text" id="states">
+            <option value=""></option>
+            <option value="alabama">Alabama</option>
+            <option value="alaska">Alaska</option>
+            <option value="arizona">Arizona</option>
+            <option value="arkansas">Arkansas</option>
+        </select>
+        <div class="searchtype">
+            <p>Search Type<p class="required">Required</p></p>
+        </div>
+        <select name="text" id="search"> <!-- Initially hidden -->
+            <option value=""></option>
+            <option value="license" style="display: none;">License</option>
+            <option value="company" style="display: none;">Company</option>
+            <option value="course" style="display: none;">Course or Provider</option>
+        </select>
+        
+        <div class="entity-container" style="display: none;"> <!-- New container for entity selection -->
+            <div class="searchtype">
+                <p>Entity Type<p class="required">Required</p></p>
             </div>
-                <select name="text" id="states">
-                    <option value="alabama">Alabama</option>
-                    <option value="alaska">Alaska</option>
-                    <option value="arizona">Arizona</option>
-                    <option value="arkansas">Arkansas</option>
-                </select>
-                <div class="searchtype">
-                    <p>
-                        Search Type
-                        <p class="required">Required</p>
-                    </p>
-                </div>
-                    <select name="text" id="search">
-                        <option value="license">License</option>
-                        <option value="company">Company</option>
-                        <option value="course">Course or Provider</option>
-                    </select>
-                    <div class="check">
-                        <input type="checkbox" name="check" id="checkbox">
-                        <p id="tc">
-                            I agree to the NAIC's <a href="black">Terms and Conditions</a>
-                        </p>
+            <select name="text" value="Individual" id="entity">
+                <option value="Individual">Individual</option>
+                <option value="businessEntity">Business Entity</option>
+            </select>
+            <div class="additional-fields-header">
+                <p>Enter one or more additional fields:</p>
+                <hr style="border: 1px solid #000; margin: 10px 0;"/>
+            </div>
+            <div class="field-container2" id="field-container2" >
+                <div class="inline-fields">
+                    <div class="field-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" placeholder="Enter License Number">
+                        <label for="license-number">License Number</label>
+                        <input type="text" id="license-number" placeholder="Enter License Number">
                     </div>
-                    <div class="button">
-                    <button id="btn1">Search</button>
-                    <button id="btn2">Reset</button>
+                    <div class="field-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" placeholder="Enter Name">
+                        <label for="npn">NPN</label>
+                        <input type="number" id="npn" placeholder="Enter NPN">
+                    </div>
                 </div>
             </div>
-  </body>
+        
+            <div class="field-container" id="field-container" style="display: none;">
+                <div class="inline-fields">
+                    <div class="field-group">
+                        <label for="business-license-number">License Number</label>
+                        <input type="text" id="business-license-number" placeholder="Enter License Number">
+                    </div>
+                    <div class="field-group">
+                        <label for="business-npn">NPN</label>
+                        <input type="number" id="business-npn" placeholder="Enter NPN">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <label for="business-name">Business Name</label>
+                    <input type="text" id="business-name" placeholder="Enter Business Name">
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="searchtype">
+            <p>Entity Type<p class="required">Required</p></p>
+        </div>
+        <select name="text" id="entity">
+            <option value="Individual">Individual</option>
+            <option value="businessEntity">Business Entity</option>
+        </select>
+
+        <div class="field-container2" id="field-container2" style="display: none;">
+            <div class="inline-fields">
+                <div class="field-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" placeholder="Enter License Number">
+                    <label for="license-number">License Number</label>
+                    <input type="text" id="license-number" placeholder="Enter License Number">
+                </div>
+                <div class="field-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" placeholder="Enter Name">
+                    <label for="npn">NPN</label>
+                    <input type="number" id="npn" placeholder="Enter NPN">
+                </div>
+            </div>
+        </div>
+
+        <div class="field-container" id="field-container" style="display: none;">
+            <div class="inline-fields">
+                <div class="field-group">
+                    <label for="business-license-number">License Number</label>
+                    <input type="text" id="business-license-number" placeholder="Enter License Number">
+                </div>
+                <div class="field-group">
+                    <label for="business-npn">NPN</label>
+                    <input type="number" id="business-npn" placeholder="Enter NPN">
+                </div>
+            </div>
+            <div class="field-group">
+                <label for="business-name">Business Name</label>
+                <input type="text" id="business-name" placeholder="Enter Business Name">
+            </div>
+        </div> -->
+
+        <div class="advanced-criteria">
+            <a href="#" id="advanced-criteria-link">Advanced Criteria</a>
+        </div>
+
+        <div class="field-container1" id="advanced-fields" style="display: none;">
+            <div class="inline-fields">
+                <div class="field-group">
+                    <label for="license-status">License Status</label>
+                    <input type="text" id="license-status" placeholder="Enter License Status" />
+                </div>
+                <div class="field-group">
+                    <label for="fein">FEIN</label>
+                    <input type="text" id="fein" placeholder="Enter FEIN" />
+                </div>
+                <div class="field-group">
+                    <label for="line-of-authority">Line of Authority</label>
+                    <input type="text" id="line-of-authority" placeholder="Enter Line of Authority" />
+                </div>
+            </div>
+            <div class="inline-fields">
+                <div class="field-group">
+                    <label for="business-city">Business City</label>
+                    <input type="text" id="business-city" placeholder="Enter Business City" />
+                </div>
+                <div class="field-group">
+                    <label for="business-state">Business State/Province</label>
+                    <input type="text" id="business-state" placeholder="Enter State/Province" />
+                </div>
+                <div class="field-group">
+                    <label for="business-zipcode">Business Zipcode</label>
+                    <input type="text" id="business-zipcode" placeholder="Enter Zipcode" />
+                </div>
+            </div>
+            <div class="inline-fields">
+                <div class="field-group">
+                    <label for="dba-business-name">DBA Business Name</label>
+                    <input type="text" id="dba-business-name" placeholder="Enter DBA Business Name" />
+                </div>
+                <div class="field-group">
+                    <label for="business-name-2">Business Name</label>
+                    <input type="text" id="business-name-2" placeholder="Enter Business Name" />
+                </div>
+                <div class="field-group">
+                    <label for="mailing-county">Mailing County</label>
+                    <input type="text" id="mailing-county" placeholder="Enter Mailing County" />
+                </div>
+            </div>
+        </div>
+
+        <div class="check">
+            <input type="checkbox" name="check" id="checkbox">
+            <p id="tc">
+                I agree to the NAIC's <a href="black">Terms and Conditions</a>
+            </p>
+        </div>
+        <div class="button">
+            <button id="btn1">Search</button>
+            <button id="btn2">Reset</button>
+        </div>
+    </div>
+  <script src="./page.js"></script>
+    
+</body>
 </html>
