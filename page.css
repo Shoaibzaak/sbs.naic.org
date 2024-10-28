@@ -243,3 +243,8 @@
   border-radius: 5px;
 }
 
+.field-group-cname {
+  width: 50vw;
+  display: flex;
+}
+
