@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="page.css" />
     <title>sbs.naic.org</title>
-</head>
-<script src="./page.js"></script>
-<body>
-    <h1>sbs.naic.org</h1>
-</body>
+  </head>
+  <script src="./page.js"></script>
+  <body>
+    <!-- <h1>sbs.naic.org</h1> -->
+    <div class="header-logo">
+      <div>
+        <img src="naic-logo.png" alt="" />
+      </div>
+    </div>
+    <div class="title">
+      <img src="SOLAR_Header.jpg" alt="" />
+      <div class="titletext">
+        <p>State Based Systems Home | State Based Systems</p>
+      </div>
+    </div>
+    <div class="form">
+            <div class="lookup">Lookup Search</div>
+                <div class="jurisdiction">
+                <p>
+                    Jurisdiction
+                    <p class="required">Required</p>
+                </p>
+            </div>
+                <select name="text" id="states">
+                    <option value="alabama">Alabama</option>
+                    <option value="alaska">Alaska</option>
+                    <option value="arizona">Arizona</option>
+                    <option value="arkansas">Arkansas</option>
+                </select>
+                <div class="searchtype">
+                    <p>
+                        Search Type
+                        <p class="required">Required</p>
+                    </p>
+                </div>
+                    <select name="text" id="search">
+                        <option value="license">License</option>
+                        <option value="company">Company</option>
+                        <option value="course">Course or Provider</option>
+                    </select>
+                    <div class="check">
+                        <input type="checkbox" name="check" id="checkbox">
+                        <p id="tc">
+                            I agree to the NAIC's <a href="black">Terms and Conditions</a>
+                        </p>
+                    </div>
+                    <div class="button">
+                    <button id="btn1">Search</button>
+                    <button id="btn2">Reset</button>
+                </div>
+            </div>
+  </body>
 </html>
