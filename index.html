@@ -29,7 +29,35 @@
             <option value="alabama">Alabama</option>
             <option value="alaska">Alaska</option>
             <option value="arizona">Arizona</option>
-            <option value="arkansas">Arkansas</option>
+            <option value="arkansas">Connecticut</option>
+            <option value="arkansas">Delaware</option>
+            <option value="arkansas">District of Columbia</option>
+            <option value="arkansas">Guam</option>
+            <option value="arkansas">Hawaii</option>
+            <option value="arkansas">Idaho</option>
+            <option value="arkansas">Illinois</option>
+            <option value="arkansas">Iowa</option>
+            <option value="arkansas">Kansas</option>
+            <option value="arkansas">Maryland</option>
+            <option value="arkansas">Massachusetts</option>
+            <option value="arkansas">Missouri</option>
+            <option value="arkansas">Montana</option>
+            <option value="arkansas">Nebraska</option>
+            <option value="arkansas">New Hampshire</option>
+            <option value="arkansas">New Jersey</option>
+            <option value="arkansas">New Mexico</option>
+            <option value="arkansas">North Carolina</option>
+            <option value="arkansas">North Dakota</option>
+            <option value="arkansas">Oklahoma</option>
+            <option value="arkansas">Oregon</option>
+            <option value="arkansas">Puerto Rico</option>
+            <option value="arkansas">Rhode Island</option>
+            <option value="arkansas">South Carolina</option>
+            <option value="arkansas">Tennessee</option>
+            <option value="arkansas">US Virgin Islands</option>
+            <option value="arkansas">Vermont</option>
+            <option value="arkansas">West Virginia</option>
+            <option value="arkansas">Wisconsin</option>
         </select>
         <div class="searchtype">
             <p>Search Type<p class="required">Required</p></p>
@@ -43,29 +71,30 @@
         
         <div class="entity-container" style="display: none;"> <!-- New container for entity selection -->
             <div class="searchtype">
-                <p>Entity Type<p class="required">Required</p></p>
+                <p>Entity Type <span class="required">Required</span></p>
             </div>
             <select name="text" value="Individual" id="entity">
                 <option value="Individual">Individual</option>
                 <option value="businessEntity">Business Entity</option>
             </select>
+            <hr style="border: 1px solid #c6c4c4; margin: 20px 10px;"/>
             <div class="additional-fields-header">
                 <p>Enter one or more additional fields:</p>
-                <hr style="border: 1px solid #000; margin: 10px 0;"/>
+                <hr style="border: 1px solid #c6c4c4; margin: 10px 0;"/>
             </div>
             <div class="field-container2" id="field-container2" >
                 <div class="inline-fields">
                     <div class="field-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" id="last_name" placeholder="Enter License Number">
+                        <input type="text" id="last_name">
                         <label for="license-number">License Number</label>
-                        <input type="text" id="license-number" placeholder="Enter License Number">
+                        <input type="number" id="license-number">
                     </div>
                     <div class="field-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" id="first_name" placeholder="Enter Name">
+                        <input type="text" id="first_name">
                         <label for="npn">NPN</label>
-                        <input type="number" id="npn" placeholder="Enter NPN">
+                        <input type="number" id="npn">
                     </div>
                 </div>
             </div>
@@ -74,154 +103,168 @@
                 <div class="inline-fields">
                     <div class="field-group">
                         <label for="business-license-number">License Number</label>
-                        <input type="text" id="business-license-number" placeholder="Enter License Number">
+                        <input type="number" id="business-license-number">
                     </div>
                     <div class="field-group">
                         <label for="business-npn">NPN</label>
-                        <input type="number" id="business-npn" placeholder="Enter NPN">
+                        <input type="number" id="business-npn">
                     </div>
                 </div>
                 <div class="field-group">
                     <label for="business-name">Business Name</label>
-                    <input type="text" id="business-name" placeholder="Enter Business Name">
+                    <input type="text" id="business-name">
                 </div>
             </div>
         </div>
         
-      <!-- company html -->
-      <div class="company-container"  style="display: none;"> <!-- New container for entity selection -->
-        <p>Please enter information into at least one field below to retrieve results.</p>
-        <div class="field-container2" id="field-container2" >
-            <div class="inline-fields">
-                <div class="field-group">
-                    <label for="last_name" id="company-name">Company Name</label>
-                    <input type="text" id="last_name" >
-                    <label for="license-number">Company Type</label>
-                    <input type="text" id="license-number">
-                    <label for="last_name" id="company-name">FEIN</label>
-                    <input type="text" id="last_name" >
-                    <label for="license-number">NAIC Group Number</label>
-                    <input type="text" id="license-number" >
-                    <label for="license-number">Line of Business</label>
-                    <input type="text" id="license-number" >
-                    <label for="license-number">Expiration Date (To)</label>
-                    <input type="date" id="license-number" >
-                </div>
-                <div class="field-group">
-                    <label for="first_name">NAIC CoCode</label>
-                    <input type="text" id="first_name" >
-                    <label for="npn">Company Number</label>
-                    <input type="number" id="npn">
-                    <label for="first_name">Old Company Name</label>
-                    <input type="text" id="first_name" >
-                    <label for="npn">Company Status</label>
-                    <input type="number" id="npn" >
-                    <label for="npn">Expiration Date (From)</label>
-                    <input type="date" id="npn" >
+        <!-- company html -->
+        <div class="company-container" style="display: none;"> <!-- New container for entity selection -->
+            <p>Please enter information into at least one field below to retrieve results.</p>
+            <div class="field-container2" id="field-container2">
+                <div class="inline-fields">
+                    <div class="field-group">
+                        <label for="company-name">Company Name</label>
+                        <input type="text" id="company-name">
+                        <label for="company-type">Company Type</label>
+                        <input type="text" id="company-type">
+                        <label for="fein">FEIN</label>
+                        <input type="text" id="fein">
+                        <label for="naic-group-number">NAIC Group Number</label>
+                        <input type="text" id="naic-group-number">
+                        <label for="line-of-business">Line of Business</label>
+                        <input type="text" id="line-of-business">
+                        <label for="expiration-date-to">Expiration Date (To)</label>
+                        <input type="date" id="expiration-date-to">
+                    </div>
+                    <div class="field-group">
+                        <label for="naic-cocode">NAIC CoCode</label>
+                        <input type="text" id="naic-cocode">
+                        <label for="company-number">Company Number</label>
+                        <input type="number" id="company-number">
+                        <label for="old-company-name">Old Company Name</label>
+                        <input type="text" id="old-company-name">
+                        <label for="company-status">Company Status</label>
+                        <input type="number" id="company-status">
+                        <label for="expiration-date-from">Expiration Date (From)</label>
+                        <input type="date" id="expiration-date-from">
+                    </div>
                 </div>
             </div>
         </div>
-    
         
-    </div>
-    <!--  course or provider -->
-
-    <div class="course-container" style="display: none;"> <!-- New container for entity selection -->
-      <div class="field-container2" id="field-container2" >
-          <div class="inline-fields">
-              <div class="field-group">
-                  <label for="last_name">Provider Name</label>
-                  <input type="text" id="last_name">
-                  <label for="license-number">Provider Number</label>
-                  <input type="text" id="license-number">
-                  <label for="license-number">Course Number</label>
-                  <input type="text" id="license-number">
-                  <label for="license-number">Course Group</label>
-                  <input type="text" id="license-number">
-                  <label for="license-number">Offering End Date</label>
-                  <input type="date" id="license-number">
-                  <label for="license-number">Offering State</label>
-                  <input type="text" id="license-number">
-              </div>
-              <div class="field-group">
-                  <label for="first_name">Education Type</label>
-                  <input type="text" id="first_name">
-                  <label for="npn">Course Name </label>
-                  <input type="number" id="npn">
-                  <label for="npn">Course Method </label>
-                  <input type="number" id="npn">
-                  <label for="npn">Offering Start Date </label>
-                  <input type="date" id="npn">
-                  <label for="npn">Offering City </label>
-                  <input type="text" id="npn">
-                  <label for="npn"> Offering Zip </label>
-                  <input type="text" id="npn">
-              </div>
-          </div>
-      </div>
+        <!--  course or provider -->
+        <div class="course-container" style="display: none;"> <!-- New container for entity selection -->
+            <div class="field-container2" id="field-container2">
+                <div class="inline-fields">
+                    <div class="field-group">
+                        <label for="provider-name">Provider Name</label>
+                        <input type="text" id="provider-name">
+                        <label for="provider-number">Provider Number</label>
+                        <input type="text" id="provider-number">
+                        <label for="course-number">Course Number</label>
+                        <input type="text" id="course-number">
+                        <label for="course-group">Course Group</label>
+                        <input type="text" id="course-group">
+                        <label for="offering-end-date">Offering End Date</label>
+                        <input type="date" id="offering-end-date">
+                        <label for="offering-state">Offering State</label>
+                        <input type="text" id="offering-state">
+                    </div>
+                    <div class="field-group">
+                        <label for="education-type">Education Type</label>
+                        <input type="text" id="education-type">
+                        <label for="course-name">Course Name</label>
+                        <input type="text" id="course-name">
+                        <label for="course-method">Course Method</label>
+                        <input type="text" id="course-method">
+                        <label for="offering-start-date">Offering Start Date</label>
+                        <input type="date" id="offering-start-date">
+                        <label for="offering-city">Offering City</label>
+                        <input type="text" id="offering-city">
+                        <label for="offering-zip">Offering Zip</label>
+                        <input type="text" id="offering-zip">
+                    </div>
+                </div>
+            </div>
   
-      <div class="field-container" id="field-container" style="display: none;">
-          <div class="inline-fields">
-              <div class="field-group">
-                  <label for="business-license-number">License Number</label>
-                  <input type="text" id="business-license-number">
-              </div>
-              <div class="field-group">
-                  <label for="business-npn">NPN</label>
-                  <input type="number" id="business-npn">
-              </div>
-          </div>
-          <div class="field-group">
-              <label for="business-name">Business Name</label>
-              <input type="text" id="business-name">
-          </div>
-      </div>
-  </div>
+            <div class="field-container" id="field-container" style="display: none;">
+                <div class="inline-fields">
+                    <div class="field-group">
+                        <label for="business-license-number">License Number</label>
+                        <input type="text" id="business-license-number">
+                    </div>
+                    <div class="field-group">
+                        <label for="business-npn">NPN</label>
+                        <input type="number" id="business-npn">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <label for="business-name">Business Name</label>
+                    <input type="text" id="business-name">
+                </div>
+            </div>
+        </div>
+
         <div class="advanced-criteria">
             <a href="#" id="advanced-criteria-link">Advanced Criteria</a>
         </div>
 
         <div class="field-container1" id="advanced-fields" style="display: none;">
-            <div class="inline-fields">
-                <div class="field-group">
-                    <label for="license-status">License Status</label>
-                    <input type="text" id="license-status"/>
+            <div class="form-container">
+                <!-- First Line: 2 Fields -->
+                <div class="inline-fields">
+                    <div class="field-group">
+                        <label for="license-status">License Type</label>
+                        <input type="text" id="license-status"/>
+                    </div>
+                    <div class="field-group">
+                        <label for="license-status">License Status</label>
+                        <input type="text" id="license-status"/>
+                    </div>
                 </div>
-                <div class="field-group">
-                    <label for="fein">FEIN</label>
-                    <input type="text" id="fein"/>
+            
+                <!-- Second Line: 3 Fields -->
+                <div class="inline-fields">
+                    <div class="field-group">
+                        <label for="resident-license">Resident License?</label>
+                        <input type="text" id="resident-license"/>
+                    </div>
+                    <div class="field-group">
+                        <label for="line-of-authority">Line of Authority</label>
+                        <input type="text" id="line-of-authority"/>
+                    </div>
+                    <div class="field-group">
+                        <label for="business-city">Business City</label>
+                        <input type="text" id="business-city"/>
+                    </div>
                 </div>
-                <div class="field-group">
-                    <label for="line-of-authority">Line of Authority</label>
-                    <input type="text" id="line-of-authority"/>
+            
+                <!-- Third Line: 3 Fields -->
+                <div class="inline-fields">
+                    <div class="field-group">
+                        <label for="business-state">Business State/Province</label>
+                        <input type="text" id="business-state"/>
+                    </div>
+                    <div class="field-group">
+                        <label for="business-zipcode">Business Zipcode</label>
+                        <input type="text" id="business-zipcode"/>
+                    </div>
+                    <div class="field-group">
+                        <label for="dba-last-name">DBA Last Name</label>
+                        <input type="text" id="dba-last-name"/>
+                    </div>
                 </div>
-            </div>
-            <div class="inline-fields">
-                <div class="field-group">
-                    <label for="business-city">Business City</label>
-                    <input type="text" id="business-city"/>
-                </div>
-                <div class="field-group">
-                    <label for="business-state">Business State/Province</label>
-                    <input type="text" id="business-state"/>
-                </div>
-                <div class="field-group">
-                    <label for="business-zipcode">Business Zipcode</label>
-                    <input type="text" id="business-zipcode"/>
-                </div>
-            </div>
-            <div class="inline-fields">
-                <div class="field-group">
-                    <label for="dba-business-name">DBA Business Name</label>
-                    <input type="text" id="dba-business-name"/>
-                </div>
-                <div class="field-group">
-                    <label for="business-name-2">Business Name</label>
-                    <input type="text" id="business-name-2"/>
-                </div>
-                <div class="field-group">
-                    <label for="mailing-county">Mailing County</label>
-                    <input type="text" id="mailing-county"/>
+            
+                <!-- Last Line: 2 Fields -->
+                <div class="inline-fields">
+                    <div class="field-group">
+                        <label for="mailing-county">Mailing County</label>
+                        <input type="text" id="mailing-county"/>
+                    </div>
+                    <div class="field-group">
+                        <label for="fein">FEIN</label>
+                        <input type="text" id="fein"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -237,7 +280,6 @@
             <button id="btn2">Reset</button>
         </div>
     </div>
-  <script src="./page.js"></script>
-    
+    <script src="./page.js"></script>
 </body>
 </html>

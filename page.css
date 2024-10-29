@@ -173,6 +173,13 @@
 #btn1:hover {
   background-color: rgb(61, 144, 171) !important;
 }
+
+
+#entity {
+    margin-left: 10px;
+}
+
+
 .field-container {
   width: 50vw;
   display: flex;
@@ -189,9 +196,13 @@
 }
 .additional-fields-header {
   text-align: center; /* Center align the text */
-  margin: 20px 0; /* Add some vertical spacing */
+  margin: 20px 10px; /* Add some vertical spacing */
 }
 
+.additional-fields-header p{
+  text-align: left; /* Center align the text */
+  margin: 20px 10px; /* Add some vertical spacing */
+}
 
 .field-container1 {
   width: 50vw;
@@ -215,22 +226,37 @@
   padding-bottom: 0.3rem;
 }
 
+.inline-fields {
+  display: flex;
+  gap: 40px; /* Adds space between the field groups */
+}
+
 .inline-fields .field-group {
   display: flex;
   flex-direction: column;
   width: 50%; /* Ensure each field group takes half of the container width */
+  margin: 0 10px;
+  gap: 10px; 
 }
+
+
 
 .inline-fields input {
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 5px;
+  
+}
+
+
+#business-name {
+   margin: 0px 10px;
 }
 
 .field-container label {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   color: #333;
   padding-bottom: 0.3rem;
 }
@@ -246,5 +272,46 @@
 .field-group-cname {
   width: 50vw;
   display: flex;
+}
+
+.form-container {
+    width: 50vw;
+    margin: 0 auto; /* Center the form on the page */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between each line */
+}
+
+.inline-fields {
+    display: flex;
+    gap: 10px; /* Space between each field group */
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Evenly distributes space in each row */
+}
+
+/* Apply blue outline to input fields when clicked */
+
+select:focus,
+input:focus {
+  outline: 2px solid #519dee; /* Adjust the color and thickness as needed */
+  border-color: #519dee;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  
+}
+
+select, input {
+  border-radius: .5rem;
+}
+
+.advanced-criteria {
+  margin: 30px auto; /* Adjust this value for more or less space */
+}
+
+.field-container1 {
+  margin-top: 10px; /* Adds gap before advanced fields */
 }
 
