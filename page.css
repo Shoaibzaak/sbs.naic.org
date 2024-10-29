@@ -284,7 +284,7 @@
 
 .inline-fields {
     display: flex;
-    gap: 10px; /* Space between each field group */
+    gap: 0px; /* Space between each field group */
 }
 
 .field-group {
@@ -302,7 +302,9 @@ input:focus {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   
 }
-
+#para{
+  margin: 13px;
+}
 select, input {
   border-radius: .5rem;
 }
@@ -310,8 +312,16 @@ select, input {
 .advanced-criteria {
   margin: 30px auto; /* Adjust this value for more or less space */
 }
-
+#advanced-criteria-link{
+  position: absolute;
+  left: 25%;
+  color: #2c6ba0;
+}
 .field-container1 {
   margin-top: 10px; /* Adds gap before advanced fields */
 }
 
+#business-name{
+  position: relative;
+  left:"10px"
+}

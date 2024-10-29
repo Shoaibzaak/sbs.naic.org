@@ -8,6 +8,7 @@ document.getElementById("advanced-criteria-link").addEventListener("click", func
 const searchSelect = document.getElementById("search");
 const entitySelect = document.getElementById("entity");
 const fieldContainer2 = document.getElementById("field-container2");
+const hyperLink = document.querySelector(".advanced-criteria");
 const fieldContainer = document.getElementById("field-container");
 const entityContainer = document.querySelector('.entity-container');
 const companyContainer = document.querySelector('.company-container');
@@ -48,10 +49,13 @@ searchSelect.addEventListener("change", function() {
     if (selectedValue === "license") {
         entityContainer.style.display = "block";
         fieldContainer2.style.display = "block";
+        hyperLink.style.display="block"
     } else if (selectedValue === "company") {
         companyContainer.style.display = "block";
+        hyperLink.style.display="none"
     } else if (selectedValue === "course") {
         courseContainer.style.display = "block";
+        hyperLink.style.display="none"
     }
 });
 
