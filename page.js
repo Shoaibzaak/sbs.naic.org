@@ -33,9 +33,7 @@ const states = [
     { name: "Vermont", value: "VT" },
     { name: "West Virginia", value: "WV" },
     { name: "Wisconsin", value: "WI" }
-];
-
-console.log(states,"states")
+]
 document.getElementById("advanced-criteria-link").addEventListener("click", function(event) {
     event.preventDefault();
     const advancedFields = document.getElementById("advanced-fields");
