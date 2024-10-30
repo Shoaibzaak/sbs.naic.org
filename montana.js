@@ -1,5 +1,5 @@
 export const MontanaData = {
-    state: "Montana",
+    state: "MT",
     licenseTypes:[
         {
             "code": "SS",

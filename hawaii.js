@@ -1,5 +1,5 @@
 export const HawaiiData = {
-    state: "Hawaii",
+    state: "HI",
     licenseTypes:[
         {
             "code": "PRO",

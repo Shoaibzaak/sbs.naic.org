@@ -1,5 +1,5 @@
 export const DistrictofColumbiaData = {
-    state: "District of Columbia",
+    state: "DC",
     licenseTypes:[
         {
             "code": "PRO",

@@ -1,5 +1,5 @@
 export const MassachusettsData = {
-    state: "Massachusetts",
+    state: "MA",
     licenseTypes:[
         {
             "code": "PRO",

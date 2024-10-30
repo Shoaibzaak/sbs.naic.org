@@ -1,5 +1,5 @@
 export const WestVirginiaData = {
-    state: "West Virginia",
+    state: "WV",
     licenseTypes:[
         {
             "code": "IDJ",

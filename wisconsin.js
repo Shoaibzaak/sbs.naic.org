@@ -1,5 +1,5 @@
 export const WisconsinData = {
-    state: "Wisconsin",
+    state: "WI",
     licenseTypes:[
         {
             "code": "INT",
