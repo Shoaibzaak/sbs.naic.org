@@ -32,7 +32,7 @@
         </div>
         <select name="text" id="search"> <!-- Initially hidden -->
             <option value=""></option>
-            <option value="license" style="display: none;">License</option>
+            <option value="license" style="display: none;">Licensee</option>
             <option value="company" style="display: none;">Company</option>
             <option value="course" style="display: none;">Course or Provider</option>
         </select>
@@ -183,10 +183,17 @@
                 <div class="inline-fields">
                     <div class="field-group">
                         <label for="license-status">License Type</label>
+                        <select name="text" id="licensetype">
+                            <option value="">License Type</option>
+                        </select>
                         <input type="text" id="license-status"/>
+                        
                     </div>
                     <div class="field-group">
                         <label for="license-status">License Status</label>
+                        <select name="text" id="licensestatus">
+                            <option value="">License Status</option>
+                        </select>
                         <input type="text" id="license-status"/>
                     </div>
                 </div>
@@ -199,11 +206,18 @@
                     </div>
                     <div class="field-group">
                         <label for="line-of-authority">Resident License?</label>
+                        <select name="text" id="Residentlicense">
+                            <option value="">Yes</option>
+                            <option value="">No</option>
+                        </select>
                         <input type="text" id="line-of-authority"/>
                     </div>
                     <div class="field-group">
-                        <label for="business-city">Line of Authority</label>
-                        <input type="text" id="business-city"/>
+                        <label for="line-of-authority">Line of Authority</label>
+                        <select name="text" id="lineofauthority">
+                            <option value="">License Status</option>
+                        </select>
+                        <input type="text" id="line-of-authority"/>
                     </div>
                 </div>
             
@@ -248,6 +262,6 @@
             <button id="btn2">Reset</button>
         </div>
     </div>
-    <script src="./page.js"></script>
+    <script type="module" src="./page.js"></script>
 </body>
 </html>
