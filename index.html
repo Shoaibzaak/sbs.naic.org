@@ -131,7 +131,9 @@
                 <div class="inline-fields">
                     <div class="field-group">
                         <label for="provider-name">Provider Name</label>
-                        <input type="text" id="provider-name">
+                        <input type="text" id="provider-name" autocomplete="off" placeholder="Start typing a provider name...">
+                        <div id="provider-suggestions" class="suggestions"></div>
+                        
                         <label for="provider-number">Provider Number</label>
                         <input type="text" id="provider-number">
                         <label for="course-number">Course Number</label>
@@ -141,15 +143,22 @@
                         <label for="offering-end-date">Offering End Date</label>
                         <input type="date" id="offering-end-date">
                         <label for="offering-state">Offering State</label>
-                        <input type="text" id="offering-state">
+                        <select id="offering-state">
+                            <option value="">Select State</option>
+                        </select>
+                        
                     </div>
                     <div class="field-group">
                         <label for="education-type">Education Type</label>
-                        <input type="text" id="education-type">
+                        <select id="education-type">
+                            <option value="">Select Education Type</option>
+                        </select>        
                         <label for="course-name">Course Name</label>
                         <input type="text" id="course-name">
                         <label for="course-method">Course Method</label>
-                        <input type="text" id="course-method">
+                        <select id="course-method">
+                            <option value="">Select Course Method</option>
+                        </select>                        
                         <label for="offering-start-date">Offering Start Date</label>
                         <input type="date" id="offering-start-date">
                         <label for="offering-city">Offering City</label>
