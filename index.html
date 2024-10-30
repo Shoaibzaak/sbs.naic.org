@@ -94,13 +94,18 @@
                         <label for="company-name">Company Name</label>
                         <input type="text" id="company-name">
                         <label for="company-type">Company Type</label>
-                        <input type="text" id="company-type">
+<select id="company-type">
+    <option value="">Select Company Type</option>
+</select>
                         <label for="fein">FEIN</label>
                         <input type="text" id="fein">
                         <label for="naic-group-number">NAIC Group Number</label>
                         <input type="text" id="naic-group-number">
                         <label for="line-of-business">Line of Business</label>
-                        <input type="text" id="line-of-business">
+                        <select id="line-of-business">
+                            <option value="">Select Line of Business</option>
+                        </select>
+                        
                         <label for="expiration-date-to">Expiration Date (To)</label>
                         <input type="date" id="expiration-date-to">
                     </div>
@@ -182,19 +187,19 @@
                 <!-- First Line: 2 Fields -->
                 <div class="inline-fields">
                     <div class="field-group">
-                        <label for="license-status">License Type</label>
-                        <select name="text" id="licensetype">
+                        <label for="license-type">License Type</label>
+                        <select id="license-type">
                             <option value="">License Type</option>
                         </select>
-                        <input type="text" id="license-status"/>
+                        <!-- <input type="text" id="license-status"/> -->
                         
                     </div>
                     <div class="field-group">
                         <label for="license-status">License Status</label>
-                        <select name="text" id="licensestatus">
-                            <option value="">License Status</option>
+                        <select  id="license-status">
+                            <option value="">Select License Status</option>
                         </select>
-                        <input type="text" id="license-status"/>
+                        <!-- <input type="text" id="license-status1"/> -->
                     </div>
                 </div>
             
@@ -205,19 +210,20 @@
                         <input type="text" id="resident-license"/>
                     </div>
                     <div class="field-group">
-                        <label for="line-of-authority">Resident License?</label>
+                        <label for="line-of-authority1">Resident License?</label>
                         <select name="text" id="Residentlicense">
                             <option value="">Yes</option>
                             <option value="">No</option>
                         </select>
-                        <input type="text" id="line-of-authority"/>
+                        <!-- <input type="text" id="line-of-authority1"/> -->
                     </div>
                     <div class="field-group">
                         <label for="line-of-authority">Line of Authority</label>
-                        <select name="text" id="lineofauthority">
-                            <option value="">Line of Authority</option>
+                        <select id="line-of-authority">
+                            <option value="">Select Line of Authority</option>
                         </select>
-                        <input type="text" id="line-of-authority"/>
+                        
+                        <!-- <input type="text" id="line-of-authority"/> -->
                     </div>
                 </div>
             
@@ -228,8 +234,10 @@
                         <input type="text" id="business-state"/>
                     </div>
                     <div class="field-group">
-                        <label for="business-zipcode">Business State/Province</label>
-                        <input type="text" id="business-zipcode"/>
+                        <label for="business-states">Business State/Province</label>
+                        <select id="business-states">
+                            <option value="">Select State/Province</option>
+                        </select>
                     </div>
                     <div class="field-group">
                         <label for="dba-last-name">Business Zipcode</label>
@@ -244,8 +252,10 @@
                         <input type="text" id="mailing-county"/>
                     </div>
                     <div class="field-group">
-                        <label for="fein">Mailing County</label>
-                        <input type="text" id="fein"/>
+                        <label for="county">Mailing County</label>
+                        <select id="county">
+                            <option value="">Select County</option>
+                        </select>
                     </div>
                 </div>
             </div>

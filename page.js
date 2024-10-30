@@ -1,4 +1,5 @@
 import { states } from "./statesData.js";
+import { AlabamaData } from "./albama.js";
 
 document.getElementById("advanced-criteria-link").addEventListener("click", function(event) {
     event.preventDefault();
@@ -9,6 +10,7 @@ document.getElementById("advanced-criteria-link").addEventListener("click", func
 const searchSelect = document.getElementById("search");
 const entitySelect = document.getElementById("entity");
 const fieldContainer2 = document.getElementById("field-container2");
+const fieldContainer1 = document.querySelector(".field-container1");
 const hyperLink = document.querySelector(".advanced-criteria");
 const fieldContainer = document.getElementById("field-container");
 const entityContainer = document.querySelector('.entity-container');
@@ -48,7 +50,6 @@ searchSelect.addEventListener("change", function() {
     fieldContainer.style.display = "none";
     companyContainer.style.display = "none";
     courseContainer.style.display = "none";
-
     // Show appropriate container based on the selection
     if (selectedValue === "license") {
         entityContainer.style.display = "block";
@@ -57,9 +58,11 @@ searchSelect.addEventListener("change", function() {
     } else if (selectedValue === "company") {
         companyContainer.style.display = "block";
         hyperLink.style.display="none"
+        fieldContainer1.style.display="none"
     } else if (selectedValue === "course") {
         courseContainer.style.display = "block";
         hyperLink.style.display="none"
+        fieldContainer1.style.display="none"
     }
 });
 
@@ -87,4 +90,118 @@ function populateStates() {
         statesDropdown.appendChild(option);
     });
 }
-document.addEventListener('DOMContentLoaded', populateStates);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Populate the states dropdown
+    populateStates();
+    
+    // Show license types based on state selection
+    document.getElementById("states").addEventListener("change", function() {
+        const selectedValue = this.value;
+        const licenseTypeSelect = document.getElementById("license-type");
+        const licenseStatusSelect = document.getElementById("license-status");
+        const businessStateSelect = document.getElementById("business-states");
+        const countySelect = document.getElementById("county");
+        const companyType = document.getElementById("company-type");
+        // Clear existing options
+        licenseTypeSelect.innerHTML = '<option value=""></option>';
+        licenseStatusSelect.innerHTML = '<option value=""></option>';
+        businessStateSelect.innerHTML = '<option value=""></option>';
+        countySelect.innerHTML = '<option value=""></option>';
+        companyType.innerHTML = '<option value=""></option>';
+        
+        // Check if the selected state is Alabama
+        if (selectedValue === "AL") {
+            // Populate license types
+            AlabamaData.licenseTypes.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type.code;
+                option.textContent = type.name;
+                licenseTypeSelect.appendChild(option);
+            });
+
+            // Populate license statuses
+            AlabamaData.licenseStatuses.forEach(status => {
+                const option = document.createElement('option');
+                option.value = status.code;
+                option.textContent = status.name;
+                licenseStatusSelect.appendChild(option);
+            });
+
+            // Populate states and provinces
+            AlabamaData.statesAndProvinces.forEach(state => {
+                const option = document.createElement('option');
+                option.value = state.code;
+                option.textContent = state.name;
+                businessStateSelect.appendChild(option);
+            });
+
+            // Populate counties
+            AlabamaData.counties.forEach(county => {
+                const option = document.createElement('option');
+                option.value = county.name;
+                option.textContent = county.name;
+                countySelect.appendChild(option);
+            });
+            AlabamaData.companyTypes.forEach(county => {
+                const option = document.createElement('option');
+                option.value = county.name;
+                option.textContent = county.name;
+                companyType.appendChild(option);
+            });
+        }
+    });
+    
+    // Show Line of Authority options based on selected license type
+    document.getElementById("license-type").addEventListener("change", function() {
+        const selectedType = this.value;
+        const loaSelect = document.getElementById("line-of-authority");
+         console.log(loaSelect,"loaSelect")
+        // Clear existing options in LOA dropdown
+        loaSelect.innerHTML = '<option value="">Select Line of Authority</option>';
+
+        // Find the selected license type and populate LOA options
+        const licenseType = AlabamaData.licenseTypes.find(type => type.code === selectedType);
+        if (licenseType && licenseType.loaTypes) {
+            licenseType.loaTypes.forEach(loa => {
+                const option = document.createElement('option');
+                option.value = loa.code;
+                option.textContent = loa.name;
+                loaSelect.appendChild(option);
+            });
+        }
+    });
+    // document.getElementById("company-type").addEventListener("change", function() {
+    //     const selectedType = this.value;
+    //     console.log(selectedType, "selectedType"); // Log selected type for debugging
+    
+    //     const lobSelect = document.getElementById("line-of-business");
+    //     console.log(lobSelect, "lobSelect"); // Check the dropdown element
+    
+    //     lobSelect.innerHTML = '<option value="">Select Line of Business</option>'; // Clear existing options
+    
+    //     // Check the AlabamaData structure
+    //     console.log(AlabamaData.companyTypes, "companyTypes"); // Log the companyTypes array
+    
+    //     // Find the selected company type in AlabamaData
+    //     const companyType = AlabamaData.companyTypes.find(type => type.code === selectedType);
+    //     console.log(companyType, "companyType"); // Check if companyType is found
+    
+    //     // If the company type exists and has lobTypes, populate the line-of-business dropdown
+    //     if (companyType && companyType.lobTypes) {
+    //         companyType.lobTypes.forEach(lob => {
+    //             const option = document.createElement('option');
+    //             option.value = lob.code; // Assuming lob has a code
+    //             option.textContent = lob.name; // Assuming lob has a name
+    //             lobSelect.appendChild(option);
+    //         });
+    //     } else {
+    //         // Handle the case where no line of business types are found
+    //         const noLobOption = document.createElement('option');
+    //         noLobOption.value = ""; // Ensure the value is empty
+    //         noLobOption.textContent = "No Lines of Business Available"; // Placeholder text
+    //         lobSelect.appendChild(noLobOption);
+    //     }
+    // });
+    
+});
