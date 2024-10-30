@@ -1,4 +1,4 @@
-import { states,lineofauthority,licensestatus,licensetype } from "./data.js";
+import { states } from "./statesData.js";
 
 document.getElementById("advanced-criteria-link").addEventListener("click", function(event) {
     event.preventDefault();
