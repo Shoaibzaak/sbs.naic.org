@@ -113,3 +113,174 @@ export const lineofauthority = [
     { name: "Self-Service Storage Facilities", value: "SSS" }
   ];
   
+  export const lineofauthority_adjuster = [ //connected with License Type #Adjuster
+    { name: "", value: "x" },
+    { name: "Property & Casualty (excl WC & Crop)", value: "PE" },
+    { name: "Property & Casualty (incl WC & Crop)", value: "PI" },
+    { name: "Workers Compensation", value: "WC" },
+    { name: "Crop", value: "CP" }
+  ];
+  
+  export const lineofauthority_servicerepresentative = [ //connected with License Type #Service Representative
+    { name: "Property", value: "P" },
+    { name: "Casualty", value: "C" },
+    { name: "Automobile (Full Coverage)", value: "A" },
+    { name: "Personal Lines", value: "PL" }
+  ];
+
+  export const lineofauthority_managinggeneralagent = [ //connected with License Type #Managing General Agent
+    { name: "", value: "" },
+    { name: "Life", value: "L" },
+    { name: "Accident & Health or Sickness", value: "H" },
+    { name: "Variable Life and Variable Annuity", value: "V" },
+    { name: "Property", value: "P" },
+    { name: "Casualty", value: "C" },
+    { name: "Automobile (Full Coverage)", value: "A" },
+    { name: "Personal Lines", value: "PL" },
+    { name: "Industrial Fire", value: "IF" },
+    { name: "Credit", value: "CR" },
+    { name: "Legal Services", value: "LS" },
+    { name: "Motor Club", value: "MC" },
+    { name: "Dental Services", value: "DS" },
+    { name: "Bail Bond", value: "BB" },
+    { name: "Car Rental", value: "RV" }
+  ];
+
+  export const lineofauthority_titleinsuranceagent = [ //connected with License Type #Title Insurance Agent
+    { name: "", value: "" },
+    { name: "Title Insurance Agent", value: "TA" },
+  ]
+  
+  export const lineofauthority_apprenticeadjuster = [ //connected with License Type #Apprentice Adjuster
+    { name: "Crop", value: "CP" },
+    { name: "Property & Casualty (excluding Workers' Compensation & Crop)", value: "PE" },
+    { name: "Property & Casualty (including Workers' Compensation & Crop)", value: "PI" },
+    { name: "Workers' Compensation", value: "AAW" }
+  ];
+  
+  export const lineofauthority_preneedsalesaagent = [ //connected with License Type #Preneed Sales Agent
+    { name: "", value: "" },
+    { name: "Preneed Sales Agent", value: "PNS" },
+  ]
+
+  export const lineofauthority_temporaryinsuranceproducer = [ //connected with License Type #Temporary Insurance Producer
+    { name: "Accident & Health or Sickness", value: "H" },
+    { name: "Casualty", value: "TCS" },
+    { name: "Life", value: "TLF" },
+    { name: "Personal Lines", value: "TPL" },
+    { name: "Property", value: "TPR" },
+    { name: "Industrial Fire", value: "IF" }
+  ];
+  
+  export const businessState_Province = [
+    { name: "Alabama", value: "AL" },
+    { name: "Alaska", value: "AK" },
+    { name: "Alberta", value: "AB" },
+    { name: "American Samoa", value: "AS" },
+    { name: "Arizona", value: "AZ" },
+    { name: "Arkansas", value: "AR" },
+    { name: "Armed Forces Americas", value: "AA" },
+    { name: "Armed Forces Other", value: "AE" },
+    { name: "Armed Forces Pacific", value: "AP" },
+    { name: "British Columbia", value: "BC" },
+    { name: "California", value: "CA" },
+    { name: "Colorado", value: "CO" },
+    { name: "Connecticut", value: "CT" },
+    { name: "Delaware", value: "DE" },
+    { name: "District of Columbia", value: "DC" },
+    { name: "Federated States of Micronesia", value: "FM" },
+    { name: "Florida", value: "FL" },
+    { name: "Georgia", value: "GA" },
+    { name: "Guam", value: "GU" },
+    { name: "Hawaii", value: "HI" },
+    { name: "Idaho", value: "ID" },
+    { name: "Illinois", value: "IL" },
+    { name: "Indiana", value: "IN" },
+    { name: "Iowa", value: "IA" },
+    { name: "Kansas", value: "KS" },
+    { name: "Kentucky", value: "KY" },
+    { name: "Louisiana", value: "LA" }
+    { name: "Maine", value: "ME" },
+    { name: "Manitoba", value: "MB" },
+    { name: "Marshall Islands", value: "MH" },
+    { name: "Maryland", value: "MD" },
+    { name: "Massachusetts", value: "MA" },
+    { name: "Michigan", value: "MI" },
+    { name: "Minnesota", value: "MN" },
+    { name: "Mississippi", value: "MS" },
+    { name: "Missouri", value: "MO" },
+    { name: "NAIC", value: "NAIC" },
+    { name: "Montana", value: "MT" },
+    { name: "Nebraska", value: "NE" },
+    { name: "New Brunswick", value: "NB" },
+    { name: "New Hampshire", value: "NH" },
+    { name: "New Jersey", value: "NJ" },
+    { name: "New Mexico", value: "NM" },
+    { name: "New York", value: "NY" },
+    { name: "Newfoundland", value: "NF" },
+    { name: "North Carolina", value: "NC" },
+    { name: "North Dakota", value: "ND" },
+    { name: "Northern Mariana Islands", value: "NT" },
+    { name: "Northwest Territories", value: "NU" },
+    { name: "Nova Scotia", value: "NV" },
+    { name: "Nunavut Territory", value: "NU" },
+    { name: "Ohio", value: "OH" },
+    { name: "Oklahoma", value: "OK" }
+    { name: "Ontario", value: "ON" },
+    { name: "Oregon", value: "OR" },
+    { name: "Pennsylvania", value: "PA" },
+    { name: "Prince Edward Island", value: "PE" },
+    { name: "Puerto Rico", value: "PR" },
+    { name: "Quebec", value: "QC" },
+    { name: "Rhode Island", value: "RI" },
+    { name: "Saskatchewan", value: "SK" },
+    { name: "South Carolina", value: "SC" },
+    { name: "South Dakota", value: "SD" },
+    { name: "Tennessee", value: "TN" },
+    { name: "Texas", value: "TX" },
+    { name: "US Virgin Islands", value: "VI" },
+    { name: "Unknown State", value: "UN" },
+    { name: "Utah", value: "UT" },
+    { name: "Vermont", value: "VT" },
+    { name: "Virginia", value: "VA" },
+    { name: "Washington", value: "WA" },
+    { name: "West Virginia", value: "WV" },
+    { name: "Wisconsin", value: "WI" },
+    { name: "Wyoming", value: "WY" },
+    { name: "Yukon Territory", value: "YT" }
+    // Add additional entries as necessary
+];
+
+export const mailingCounty = [
+    { name: "Autauga", value: "Autauga" },
+    { name: "Baldwin", value: "Baldwin" },
+    { name: "Barbour", value: "Barbour" },
+    { name: "Bibb", value: "Bibb" },
+    { name: "Blount", value: "Blount" },
+    { name: "Bullock", value: "Bullock" },
+    { name: "Butler", value: "Butler" },
+    { name: "Calhoun", value: "Calhoun" },
+    { name: "Chambers", value: "Chambers" },
+    { name: "Cherokee", value: "Cherokee" },
+    { name: "Chilton", value: "Chilton" },
+    { name: "Choctaw", value: "Choctaw" },
+    { name: "Clarke", value: "Clarke" },
+    { name: "Clay", value: "Clay" },
+    { name: "Cleburne", value: "Cleburne" },
+    { name: "Coffee", value: "Coffee" },
+    { name: "Colbert", value: "Colbert" },
+    { name: "Conecuh", value: "Conecuh" },
+    { name: "Coosa", value: "Coosa" },
+    { name: "Covington", value: "Covington" },
+    { name: "Crenshaw", value: "Crenshaw" },
+    { name: "Cullman", value: "Cullman" },
+    { name: "Dale", value: "Dale" },
+    { name: "Dallas", value: "Dallas" },
+    { name: "Dekalb", value: "Dekalb" },
+    { name: "Elmore", value: "Elmore" },
+    { name: "Escambia", value: "Escambia" },
+    { name: "Etowah", value: "Etowah" },
+    { name: "Fayette", value: "Fayette" },
+    { name: "Franklin", value: "Franklin" },
+    { name: "Greene", value: "Greene" }
+];
