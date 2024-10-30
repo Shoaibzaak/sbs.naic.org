@@ -1,5 +1,5 @@
 export const ArizonaData = {
-    state: "Arizona",
+    state: "AZ",
     licenseTypes:[
         {
             "code": "PRO",

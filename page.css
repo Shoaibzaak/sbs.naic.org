@@ -219,6 +219,10 @@
   margin-bottom: 0.5rem; /* Space below inline fields */
 }
 
+.field-group select {
+  padding: 0.5rem;
+}
+
 .inline-fields label {
   font-size: 1rem;
   font-weight: 500;

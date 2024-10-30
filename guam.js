@@ -1,5 +1,5 @@
 export const GuamData = {
-    state: "Guam",
+    state: "GU",
     licenseTypes:[
         {
             "code": "PRO",

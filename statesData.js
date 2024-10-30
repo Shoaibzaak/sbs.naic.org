@@ -3,7 +3,7 @@ export const states = [
     { name: "Alaska", value: "AK" },
     { name: "Arizona", value: "AZ" },
     { name: "Arkansas", value: "AR" },
-    { name: "California", value: "" }, // empty value example as seen in the screenshot
+    { name: "California", value: "CL" }, // empty value example as seen in the screenshot
     { name: "Connecticut", value: "CT" },
     { name: "Delaware", value: "DE" },
     { name: "District of Columbia", value: "DC" },

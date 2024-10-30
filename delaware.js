@@ -1,5 +1,5 @@
 export const DelawareData = {
-    state: "Delaware",
+    state: "DE",
     licenseTypes:[
         {
             "code": "01",
