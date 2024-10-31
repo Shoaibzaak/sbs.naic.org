@@ -1,6 +1,16 @@
 import { states } from "./statesData.js";
 import { AlabamaData } from "./albama.js";
-
+import {AlaskaData} from "./alaska.js"
+import {ArizonaData} from "./arizona.js"
+import {ArkansasData } from "./arkansas.js"
+import {MarylandData } from "./maryland.js"
+const StateData = {
+    AL: AlabamaData,
+    AK: AlaskaData,
+    AZ: ArizonaData,
+    AR: ArkansasData,
+    MD: MarylandData,
+};
 document.getElementById("advanced-criteria-link").addEventListener("click", function(event) {
     event.preventDefault();
     const advancedFields = document.getElementById("advanced-fields");
@@ -91,89 +101,60 @@ function populateStates() {
     });
 }
 
+
 document.addEventListener('DOMContentLoaded', function() {
     // Populate the states dropdown
     populateStates();
 
-    // Show license types based on state selection
     document.getElementById("states").addEventListener("change", function() {
-        const selectedValue = this.value;
+        const selectedState = this.value; // e.g., "AL" for Alabama
+        populateDropdownsForState(selectedState);
+    });
+
+    // Function to populate dropdowns dynamically for a given state
+    function populateDropdownsForState(stateAbbreviation) {
+        const stateData = StateData[stateAbbreviation]; // Get specific state data
+
+        if (!stateData) {
+            console.warn(`No data found for state: ${stateAbbreviation}`);
+            return;
+        }
+
+        // Define dropdown elements
         const licenseTypeSelect = document.getElementById("license-type");
         const licenseStatusSelect = document.getElementById("license-status");
         const businessStateSelect = document.getElementById("business-states");
         const countySelect = document.getElementById("county");
         const companyTypeSelect = document.getElementById("company-type");
-        const educationeSelect = document.getElementById("education-type");
+        const educationSelect = document.getElementById("education-type");
         const courseSelect = document.getElementById("course-method");
         const offeringSelect = document.getElementById("offering-state");
 
-        // Clear existing options
-        licenseTypeSelect.innerHTML = '<option value=""></option>';
-        licenseStatusSelect.innerHTML = '<option value=""></option>';
-        businessStateSelect.innerHTML = '<option value=""></option>';
-        countySelect.innerHTML = '<option value=""></option>';
-        companyTypeSelect.innerHTML = '<option value=""></option>';
-        educationeSelect.innerHTML = '<option value=""></option>';
-        courseSelect.innerHTML = '<option value=""></option>';
-        offeringSelect.innerHTML = '<option value=""></option>';
+        // Clear existing options in all dropdowns
+        const selects = [licenseTypeSelect, licenseStatusSelect, businessStateSelect, countySelect, companyTypeSelect, educationSelect, courseSelect, offeringSelect];
+        selects.forEach(select => select.innerHTML = '<option value=""></option>');
 
-        // Check if the selected state is Alabama
-        if (selectedValue === "AL") {
-            AlabamaData.licenseTypes.forEach(type => {
-                const option = document.createElement('option');
-                option.value = type.code;
-                option.textContent = type.name;
-                licenseTypeSelect.appendChild(option);
-            });
+        // Populate dropdowns with state-specific data
+        populateSelect(licenseTypeSelect, stateData.licenseTypes);
+        populateSelect(licenseStatusSelect, stateData.licenseStatuses);
+        populateSelect(businessStateSelect, stateData.statesAndProvinces);
+        populateSelect(countySelect, stateData.counties);
+        populateSelect(companyTypeSelect, stateData.companyTypes);
+        populateSelect(educationSelect, stateData.educationTypes);
+        populateSelect(courseSelect, stateData.courseMethods);
+        populateSelect(offeringSelect, stateData.states);
+    }
+ // Helper function to populate dropdown options
+ function populateSelect(selectElement, dataList) {
+    if (!dataList) return; // Handle cases where some data might be missing
 
-            AlabamaData.licenseStatuses.forEach(status => {
-                const option = document.createElement('option');
-                option.value = status.code;
-                option.textContent = status.name;
-                licenseStatusSelect.appendChild(option);
-            });
-
-            AlabamaData.statesAndProvinces.forEach(state => {
-                const option = document.createElement('option');
-                option.value = state.code;
-                option.textContent = state.name;
-                businessStateSelect.appendChild(option);
-            });
-
-            AlabamaData.counties.forEach(county => {
-                const option = document.createElement('option');
-                option.value = county.name;
-                option.textContent = county.name;
-                countySelect.appendChild(option);
-            });
-
-            AlabamaData.companyTypes.forEach(type => {
-                const option = document.createElement('option');
-                option.value = type.code;
-                option.textContent = type.name;
-                companyTypeSelect.appendChild(option);
-            });
-            AlabamaData.educationTypes.forEach(type => {
-                const option = document.createElement('option');
-                option.value = type.code;
-                option.textContent = type.name;
-                educationeSelect.appendChild(option);
-            });
-            AlabamaData.courseMethods.forEach(type => {
-                const option = document.createElement('option');
-                option.value = type.code;
-                option.textContent = type.name;
-                courseSelect.appendChild(option);
-            });
-            AlabamaData.states.forEach(type => {
-                const option = document.createElement('option');
-                option.value = type.code;
-                option.textContent = type.name;
-                offeringSelect.appendChild(option);
-            });
-        }
+    dataList.forEach(data => {
+        const option = document.createElement('option');
+        option.value = data.code || data.name;
+        option.textContent = data.name;
+        selectElement.appendChild(option);
     });
-
+}
     // Show Line of Authority options based on selected license type
     document.getElementById("license-type").addEventListener("change", function() {
         const selectedType = this.value;
