@@ -239,7 +239,7 @@
   display: flex;
   flex-direction: column;
   width: 50%; /* Ensure each field group takes half of the container width */
-  margin: 0 10px;
+  margin: 0 7px;
   gap: 10px; 
 }
 

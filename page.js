@@ -216,12 +216,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const providerInput = document.getElementById('provider-name');
     const suggestionsContainer = document.getElementById('provider-suggestions');
 
-    // Show suggestions on input focus
-    providerInput.addEventListener('focus', function() {
-        const matchingProviders = AlabamaData.activeProviders; // Show all providers
+    // Function to display suggestions (filtered or full list)
+    function displaySuggestions(providers) {
         suggestionsContainer.innerHTML = ''; // Clear previous suggestions
 
-        matchingProviders.forEach(provider => {
+        providers.forEach(provider => {
             const suggestionItem = document.createElement('div');
             suggestionItem.classList.add('suggestion-item');
             suggestionItem.textContent = provider.name;
@@ -229,22 +228,37 @@ document.addEventListener('DOMContentLoaded', function() {
             suggestionItem.addEventListener('click', function() {
                 providerInput.value = provider.name; // Set input value to selected provider
                 suggestionsContainer.innerHTML = ''; // Clear suggestions after selection
+                suggestionsContainer.classList.remove('show'); // Hide suggestions
             });
 
             suggestionsContainer.appendChild(suggestionItem);
         });
 
-        // Show the suggestions if any
-        if (matchingProviders.length > 0) {
-            suggestionsContainer.classList.add('show'); // Show suggestions
+        // Show or hide suggestions based on the list length
+        if (providers.length > 0) {
+            suggestionsContainer.classList.add('show');
         } else {
-            suggestionsContainer.classList.remove('show'); // Hide suggestions if none
+            suggestionsContainer.classList.remove('show');
         }
+    }
+
+    // Show full list on focus
+    providerInput.addEventListener('focus', function() {
+        displaySuggestions(AlabamaData.activeProviders);
+    });
+
+    // Filter and show suggestions on typing
+    providerInput.addEventListener('input', function() {
+        const query = providerInput.value.toLowerCase();
+        const matchingProviders = AlabamaData.activeProviders.filter(provider =>
+            provider.name.toLowerCase().includes(query)
+        );
+        displaySuggestions(matchingProviders);
     });
 
     // Hide suggestions when clicking outside
     document.addEventListener('click', function(e) {
-        if (e.target !== providerInput && e.target.closest('.suggestions') !== suggestionsContainer) {
+        if (e.target !== providerInput && !suggestionsContainer.contains(e.target)) {
             suggestionsContainer.innerHTML = ''; // Clear suggestions if clicked outside
             suggestionsContainer.classList.remove('show'); // Hide suggestions
         }
