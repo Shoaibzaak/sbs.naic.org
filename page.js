@@ -19,6 +19,19 @@ import { MontanaData } from "./api_data/montana.js";
 import { NebraskaData } from "./api_data/nebraska.js";
 import { WestVirginiaData } from "./api_data/west-virginia.js";
 import { WisconsinData } from "./api_data/wisconsin.js";
+import { NewHampshireData } from "./api_data/New_Hampshire.js";
+import { NewJerseyData } from "./api_data/New_Jersey.js";
+import { NewMexicoData } from "./api_data/New_Mexico.js";
+import { NorthCarolinaData } from "./api_data/North_Carolina.js";
+import { NorthDakotaData } from "./api_data/North_Dakota.js";
+import { OklahomaData } from "./api_data/Oklahoma.js";
+import { OregonData } from "./api_data/Oregon.js";
+import { PuertoRicoData } from "./api_data/Puerto_Rico.js";
+import { RhodeIslandData } from "./api_data/Rhode_island.js";
+import { SouthCarolinaData } from "./api_data/South_Carolina.js";
+import { TennesseeData } from "./api_data/tennessee.js";
+import { UsVirginIslandsData } from "./api_data/Us_Virgin_islands.js";
+import { VermontData } from "./api_data/vermont.js";
 const StateData = {
     AL: AlabamaData,
     AK: AlaskaData,
@@ -40,6 +53,19 @@ const StateData = {
     NE: NebraskaData,
     WV: WestVirginiaData,
     WI: WisconsinData,
+    NH: NewHampshireData,
+    NJ: NewJerseyData,
+    NM: NewMexicoData,
+    NC: NorthCarolinaData,
+    ND: NorthDakotaData,
+    OK: OklahomaData,
+    OR: OregonData,
+    PR: PuertoRicoData,
+    RI: RhodeIslandData,
+    SC: SouthCarolinaData,
+    TN: TennesseeData,
+    VI: UsVirginIslandsData,
+    VT: VermontData,
 };
 document.getElementById("advanced-criteria-link").addEventListener("click", function(event) {
     event.preventDefault();
