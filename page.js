@@ -1,9 +1,9 @@
-import { states } from "./statesData.js";
-import { AlabamaData } from "./albama.js";
-import {AlaskaData} from "./alaska.js"
-import {ArizonaData} from "./arizona.js"
-import {ArkansasData } from "./arkansas.js"
-import {MarylandData } from "./maryland.js"
+import { states } from "./api_data/statesData.js";
+import { AlabamaData } from "./api_data/albama.js";
+import {AlaskaData} from "./api_data/alaska.js"
+import {ArizonaData} from "./api_data/arizona.js"
+import {ArkansasData } from "./api_data/arkansas.js"
+import {MarylandData } from "./api_data/maryland.js"
 const StateData = {
     AL: AlabamaData,
     AK: AlaskaData,
