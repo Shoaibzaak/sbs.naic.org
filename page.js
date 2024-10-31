@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("company-type").addEventListener("change", function() {
         const selectedType = this.value;
         const lobSelect = document.getElementById("line-of-business");
-        lobSelect.innerHTML = '<option value="">Select Line of Business</option>';
+        lobSelect.innerHTML = '<option value=""></option>';
 
         const companyType = AlabamaData.companyTypes.find(type => type.code === selectedType);
         if (companyType && companyType.lobTypes) {
