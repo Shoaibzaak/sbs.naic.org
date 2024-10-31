@@ -1,5 +1,5 @@
 export const VermontData = {
-    state: "Vermont",
+    state: "VT",
     licenseTypes:[
         {
             "code": "APD",

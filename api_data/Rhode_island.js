@@ -1,5 +1,5 @@
-export const Rhode_island_Data = {
-    state: "Rhode_island", 
+export const RhodeIslandData = {
+    state: "RI", 
     licenseTypes:[
         {
             "code": "TMP",

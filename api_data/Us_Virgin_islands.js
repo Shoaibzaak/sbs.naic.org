@@ -1,5 +1,5 @@
-export const Us_Virgin_IslandsData = {
-    state: "Us_Virgin_Islands",
+export const UsVirginIslandsData = {
+    state: "VI",
     licenseTypes:[
         {
             "code": "PRO",

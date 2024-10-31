@@ -1,5 +1,5 @@
-export const North_Dakota_Data = {
-    state: "Noorth_Dakota",
+export const NorthDakotaData = {
+    state: "ND",
     licenseTypes:[
         {
             "code": "CON",

@@ -1,127 +1,617 @@
-export const AlabamaData = {
-    state: "Alabama",
-    licenseTypes: [
-      {
-        code: "PRO",
-        name: "Insurance Producer",
-        loaTypes: [
-          { code: "L", name: "Life" },
-          { code: "H", name: "Accident & Health or Sickness" },
-          { code: "V", name: "Variable Life and Variable Annuity" },
-          { code: "P", name: "Property" },
-          { code: "C", name: "Casualty" },
-          { code: "A", name: "Automobile (Full Coverage)" },
-          { code: "PL", name: "Personal Lines" },
-          { code: "BB", name: "Bail Bond" },
-          { code: "MC", name: "Motor Club" },
-          { code: "DS", name: "Dental Services" },
-          { code: "LS", name: "Legal Services" },
-          { code: "IF", name: "Industrial Fire" },
-          { code: "CR", name: "Credit" },
-          { code: "RV", name: "Car Rental" },
-          { code: "TRV", name: "Travel" },
-          { code: "CP", name: "Crop" },
-          { code: "NRS", name: "Non-resident Reciprocal Surety" },
-          { code: "SSS", name: "Self-Service Storage Facilities" }
-        ]
-      },
-      {
-        code: "ADJ",
-        name: "Adjuster",
-        loaTypes: [
-          { code: "PE", name: "Property & Casualty (excl WC & Crop)" },
-          { code: "PI", name: "Property & Casualty (incl WC & Crop)" },
-          { code: "WC", name: "Workers Compensation" },
-          { code: "CP", name: "Crop" }
-        ]
-      },
-      {
-        code: "SRP",
-        name: "Service Representative",
-        loaTypes: [
-          { code: "P", name: "Property" },
-          { code: "C", name: "Casualty" },
-          { code: "A", name: "Automobile (Full Coverage)" },
-          { code: "PL", name: "Personal Lines" }
-        ]
-      },
-      {
-        code: "MGA",
-        name: "Managing General Agent",
-        loaTypes: [
-          { code: "L", name: "Life" },
-          { code: "H", name: "Accident & Health or Sickness" },
-          { code: "V", name: "Variable Life and Variable Annuity" },
-          { code: "P", name: "Property" },
-          { code: "C", name: "Casualty" },
-          { code: "A", name: "Automobile (Full Coverage)" },
-          { code: "PL", name: "Personal Lines" },
-          { code: "IF", name: "Industrial Fire" },
-          { code: "CR", name: "Credit" },
-          { code: "LS", name: "Legal Services" },
-          { code: "MC", name: "Motor Club" },
-          { code: "DS", name: "Dental Services" },
-          { code: "BB", name: "Bail Bond" },
-          { code: "RV", name: "Car Rental" }
-        ]
-      },
-      {
-        code: "TIA",
-        name: "Title Insurance Agent",
-        loaTypes: [{ code: "TA", name: "Title Insurance Agent" }]
-      },
-      {
-        code: "SLB",
-        name: "Surplus Line Broker",
-        loaTypes: []
-      },
-      {
-        code: "AA",
-        name: "Apprentice Adjuster",
-        loaTypes: [
-          { code: "CP", name: "Crop" },
-          { code: "PE", name: "Property & Casualty (excluding Workers' Compensation & Crop)" },
-          { code: "PI", name: "Property & Casualty (including Workers' Compensation & Crop)" },
-          { code: "AAW", name: "Workers' Compensation" }
-        ]
-      },
-      {
-        code: "PES",
-        name: "Portable Electronic Insurance Large",
-        loaTypes: []
-      },
-      {
-        code: "PEB",
-        name: "Portable Electronic Insurance Small",
-        loaTypes: []
-      },
-      {
-        code: "PSA",
-        name: "Preneed Sales Agent",
-        loaTypes: [{ code: "PNS", name: "Preneed Sales Agent" }]
-      },
-      {
-        code: "RIN",
-        name: "Reinsurance Intermediary",
-        loaTypes: []
-      },
-      {
-        code: "TP",
-        name: "Temporary Insurance Producer",
-        loaTypes: [
-          { code: "H", name: "Accident & Health or Sickness" },
-          { code: "TCS", name: "Casualty" },
-          { code: "TLF", name: "Life" },
-          { code: "TPL", name: "Personal Lines" },
-          { code: "TPR", name: "Property" },
-          { code: "IF", name: "Industrial Fire" }
-        ]
-      },
-      {
-        code: "PBM",
-        name: "Pharmacy Benefit Manager",
-        loaTypes: []
-      }
+export const AlaskaData = {
+    state: "AK",
+    licenseTypes:[
+        {
+            "code": "PRO",
+            "name": "Insurance Producer",
+            "loaTypes": [
+                {
+                    "code": "BHS",
+                    "name": "LOA based on home state license"
+                },
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                },
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "PL",
+                    "name": "Personal Lines"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                }
+            ]
+        },
+        {
+            "code": "SLB",
+            "name": "Surplus Lines Broker",
+            "loaTypes": [
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                },
+                {
+                    "code": "798",
+                    "name": "Workers Compensation"
+                },
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "PL",
+                    "name": "Personal Lines"
+                },
+                {
+                    "code": "H",
+                    "name": "Health"
+                }
+            ]
+        },
+        {
+            "code": "IA",
+            "name": "Independent Adjuster ",
+            "loaTypes": [
+                {
+                    "code": "BHS",
+                    "name": "LOA based on home state license"
+                },
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                },
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                },
+                {
+                    "code": "PL",
+                    "name": "Personal Lines"
+                }
+            ]
+        },
+        {
+            "code": "BBP",
+            "name": "Bail Bond Limited Producer",
+            "loaTypes": [
+                {
+                    "code": "B",
+                    "name": "Bail Bond"
+                }
+            ]
+        },
+        {
+            "code": "CIP",
+            "name": "Controlling Insurance Producer ",
+            "loaTypes": [
+                {
+                    "code": "BHS",
+                    "name": "LOA based on home state license"
+                },
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                },
+                {
+                    "code": "CR",
+                    "name": "Credit"
+                },
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                },
+                {
+                    "code": "PL",
+                    "name": "Personal Lines"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                }
+            ]
+        },
+        {
+            "code": "CLP",
+            "name": "Credit Insurance Limited Producer",
+            "loaTypes": [
+                {
+                    "code": "CR",
+                    "name": "Credit"
+                }
+            ]
+        },
+        {
+            "code": "CRP",
+            "name": "Crop Insurance Limited Producer",
+            "loaTypes": []
+        },
+        {
+            "code": "EIA",
+            "name": "Exempt Independent Adjuster",
+            "loaTypes": []
+        },
+        {
+            "code": "EMA",
+            "name": "Exempt Managing General Agent",
+            "loaTypes": []
+        },
+        {
+            "code": "EME",
+            "name": "Exempt Motor Vehicle Employee ",
+            "loaTypes": [
+                {
+                    "code": "MV",
+                    "name": "Motor Vehicle Rental"
+                }
+            ]
+        },
+        {
+            "code": "EP",
+            "name": "Exempt Producer",
+            "loaTypes": []
+        },
+        {
+            "code": "ERB",
+            "name": "Exempt Reinsurance Intermediary Broker",
+            "loaTypes": []
+        },
+        {
+            "code": "ERM",
+            "name": "Exempt Reinsurance Intermediary Manager",
+            "loaTypes": []
+        },
+        {
+            "code": "ESB",
+            "name": "Exempt Surplus Lines Broker",
+            "loaTypes": []
+        },
+        {
+            "code": "ETA",
+            "name": "Exempt Third Party Administrator",
+            "loaTypes": [
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                }
+            ]
+        },
+        {
+            "code": "IPA",
+            "name": "Independent Portable Electronics Adjuster",
+            "loaTypes": [
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                }
+            ]
+        },
+        {
+            "code": "MGA",
+            "name": "Managing General Agent ",
+            "loaTypes": [
+                {
+                    "code": "BHS",
+                    "name": "LOA based on home state license"
+                },
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                },
+                {
+                    "code": "CR",
+                    "name": "Credit"
+                },
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                },
+                {
+                    "code": "PL",
+                    "name": "Personal Lines"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                }
+            ]
+        },
+        {
+            "code": "MLP",
+            "name": "Miscellaneous Limited Producer",
+            "loaTypes": [
+                {
+                    "code": "BHS",
+                    "name": "LOA based on home state license"
+                }
+            ]
+        },
+        {
+            "code": "MVP",
+            "name": "Motor Vehicle Rental Limited Producer",
+            "loaTypes": [
+                {
+                    "code": "MV",
+                    "name": "Motor Vehicle Rental"
+                }
+            ]
+        },
+        {
+            "code": "VCA",
+            "name": "Motor Vehicle Service Contract Administrator",
+            "loaTypes": []
+        },
+        {
+            "code": "VCP",
+            "name": "Motor Vehicle Service Contract Provider",
+            "loaTypes": [
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                }
+            ]
+        },
+        {
+            "code": "NLP",
+            "name": "Nonresident Limited Producer",
+            "loaTypes": [
+                {
+                    "code": "BHS",
+                    "name": "LOA based on home state license"
+                }
+            ]
+        },
+        {
+            "code": "PEP",
+            "name": "Portable Electronics Limited Producer",
+            "loaTypes": [
+                {
+                    "code": "PER",
+                    "name": "Portable Electronics"
+                }
+            ]
+        },
+        {
+            "code": "RIB",
+            "name": "Reinsurance Intermediary Broker",
+            "loaTypes": [
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                },
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "PL",
+                    "name": "Personal Lines"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                }
+            ]
+        },
+        {
+            "code": "RIM",
+            "name": "Reinsurance Intermediary Manager ",
+            "loaTypes": [
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                },
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "PL",
+                    "name": "Personal Lines"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                }
+            ]
+        },
+        {
+            "code": "TMA",
+            "name": "Temporary Managing General Agent",
+            "loaTypes": [
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                },
+                {
+                    "code": "CR",
+                    "name": "Credit"
+                },
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "PL",
+                    "name": "Personal Lines"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                }
+            ]
+        },
+        {
+            "code": "TP",
+            "name": "Temporary Producer",
+            "loaTypes": [
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                },
+                {
+                    "code": "CR",
+                    "name": "Credit"
+                },
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "PL",
+                    "name": "Personal Lines"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                }
+            ]
+        },
+        {
+            "code": "TPA",
+            "name": "Third Party Administrator ",
+            "loaTypes": [
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                }
+            ]
+        },
+        {
+            "code": "TIP",
+            "name": "Title Insurance Limited Producer",
+            "loaTypes": [
+                {
+                    "code": "T",
+                    "name": "Title"
+                }
+            ]
+        },
+        {
+            "code": "TIA",
+            "name": "Trainee Independent Adjuster  ",
+            "loaTypes": [
+                {
+                    "code": "CAS",
+                    "name": "Casualty"
+                },
+                {
+                    "code": "P",
+                    "name": "Property"
+                },
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "PL",
+                    "name": "Personal Lines"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                }
+            ]
+        },
+        {
+            "code": "TVP",
+            "name": "Travel Insurance Limited Producer",
+            "loaTypes": [
+                {
+                    "code": "Z",
+                    "name": "Travel"
+                }
+            ]
+        },
+        {
+            "code": "VSB",
+            "name": "Viatical Settlement Broker",
+            "loaTypes": [
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                }
+            ]
+        },
+        {
+            "code": "VSP",
+            "name": "Viatical Settlement Provider",
+            "loaTypes": [
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                }
+            ]
+        },
+        {
+            "code": "VSR",
+            "name": "Viatical Settlement Representative",
+            "loaTypes": [
+                {
+                    "code": "H",
+                    "name": "Health"
+                },
+                {
+                    "code": "V",
+                    "name": "Variable Life and Variable Annuity"
+                },
+                {
+                    "code": "L",
+                    "name": "Life"
+                }
+            ]
+        }
+    ],
+    licenseStatuses:[
+        {
+            "code": "A",
+            "name": "Active"
+        },
+        {
+            "code": "CA",
+            "name": "Cancelled"
+        },
+        {
+            "code": "D",
+            "name": "Deceased"
+        },
+        {
+            "code": "DI",
+            "name": "Denied"
+        },
+        {
+            "code": "E",
+            "name": "Expired"
+        },
+        {
+            "code": "I",
+            "name": "Inactive"
+        },
+        {
+            "code": "J",
+            "name": "Rejected"
+        },
+        {
+            "code": "RV",
+            "name": "Revoked"
+        },
+        {
+            "code": "SP",
+            "name": "Suspended"
+        }
+    ],
+    counties:[
+        {
+            "name": "Other/Out of State"
+        }
     ],
     statesAndProvinces:[
         {
@@ -427,256 +917,6 @@ export const AlabamaData = {
         {
             "code": "YT",
             "name": "Yukon Territory"
-        }
-    ],
-    counties:[
-        {
-            "name": "Autauga"
-        },
-        {
-            "name": "Baldwin"
-        },
-        {
-            "name": "Barbour"
-        },
-        {
-            "name": "Bibb"
-        },
-        {
-            "name": "Blount"
-        },
-        {
-            "name": "Bullock"
-        },
-        {
-            "name": "Butler"
-        },
-        {
-            "name": "Calhoun"
-        },
-        {
-            "name": "Chambers"
-        },
-        {
-            "name": "Cherokee"
-        },
-        {
-            "name": "Chilton"
-        },
-        {
-            "name": "Choctaw"
-        },
-        {
-            "name": "Clarke"
-        },
-        {
-            "name": "Clay"
-        },
-        {
-            "name": "Cleburne"
-        },
-        {
-            "name": "Coffee"
-        },
-        {
-            "name": "Colbert"
-        },
-        {
-            "name": "Conecuh"
-        },
-        {
-            "name": "Coosa"
-        },
-        {
-            "name": "Covington"
-        },
-        {
-            "name": "Crenshaw"
-        },
-        {
-            "name": "Cullman"
-        },
-        {
-            "name": "Dale"
-        },
-        {
-            "name": "Dallas"
-        },
-        {
-            "name": "Dekalb"
-        },
-        {
-            "name": "Elmore"
-        },
-        {
-            "name": "Escambia"
-        },
-        {
-            "name": "Etowah"
-        },
-        {
-            "name": "Fayette"
-        },
-        {
-            "name": "Franklin"
-        },
-        {
-            "name": "Geneva"
-        },
-        {
-            "name": "Greene"
-        },
-        {
-            "name": "Hale"
-        },
-        {
-            "name": "Henry"
-        },
-        {
-            "name": "Houston"
-        },
-        {
-            "name": "Jackson"
-        },
-        {
-            "name": "Jefferson"
-        },
-        {
-            "name": "Kent"
-        },
-        {
-            "name": "Lamar"
-        },
-        {
-            "name": "Lauderdale"
-        },
-        {
-            "name": "Lawrence"
-        },
-        {
-            "name": "Lee"
-        },
-        {
-            "name": "Limestone"
-        },
-        {
-            "name": "Lowndes"
-        },
-        {
-            "name": "Macon"
-        },
-        {
-            "name": "Madison"
-        },
-        {
-            "name": "Marengo"
-        },
-        {
-            "name": "Marion"
-        },
-        {
-            "name": "Marshall"
-        },
-        {
-            "name": "Mobile"
-        },
-        {
-            "name": "Monroe"
-        },
-        {
-            "name": "Montgomery"
-        },
-        {
-            "name": "Morgan"
-        },
-        {
-            "name": "New Castle"
-        },
-        {
-            "name": "Perry"
-        },
-        {
-            "name": "Pickens"
-        },
-        {
-            "name": "Pike"
-        },
-        {
-            "name": "Randolph"
-        },
-        {
-            "name": "Russell"
-        },
-        {
-            "name": "Shelby"
-        },
-        {
-            "name": "St. Clair"
-        },
-        {
-            "name": "Sumter"
-        },
-        {
-            "name": "Sussex"
-        },
-        {
-            "name": "Talladega"
-        },
-        {
-            "name": "Tallapoosa"
-        },
-        {
-            "name": "Tuscaloosa"
-        },
-        {
-            "name": "Walker"
-        },
-        {
-            "name": "Washington"
-        },
-        {
-            "name": "Wilcox"
-        },
-        {
-            "name": "Winston"
-        }
-    ],
-    licenseStatuses:[
-        {
-            "code": "A",
-            "name": "Active"
-        },
-        {
-            "code": "CA",
-            "name": "Cancelled"
-        },
-        {
-            "code": "D",
-            "name": "Deceased"
-        },
-        {
-            "code": "DI",
-            "name": "Denied"
-        },
-        {
-            "code": "E",
-            "name": "Expired"
-        },
-        {
-            "code": "I",
-            "name": "Inactive"
-        },
-        {
-            "code": "J",
-            "name": "Rejected"
-        },
-        {
-            "code": "RV",
-            "name": "Revoked"
-        },
-        {
-            "code": "SP",
-            "name": "Suspended"
         }
     ],
     companyTypes:[
@@ -2358,5 +2598,4 @@ export const AlabamaData = {
             "name": "Yukon Territory"
         }
     ],
-  };
-  
+}

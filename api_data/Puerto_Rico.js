@@ -1,5 +1,5 @@
-export const Puerto_Rico_Data = {
-    state: "Puerto_Rico",
+export const PuertoRicoData = {
+    state: "PR",
     licenseTypes:[
         {
             "code": "BBM",

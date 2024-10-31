@@ -1,5 +1,16 @@
-import { states } from "./statesData.js";
-
+import { states } from "./api_data/statesData.js";
+import { AlabamaData } from "./api_data/albama.js";
+import {AlaskaData} from "./api_data/alaska.js"
+import {ArizonaData} from "./api_data/arizona.js"
+import {ArkansasData } from "./api_data/arkansas.js"
+import {MarylandData } from "./api_data/maryland.js"
+const StateData = {
+    AL: AlabamaData,
+    AK: AlaskaData,
+    AZ: ArizonaData,
+    AR: ArkansasData,
+    MD: MarylandData,
+};
 document.getElementById("advanced-criteria-link").addEventListener("click", function(event) {
     event.preventDefault();
     const advancedFields = document.getElementById("advanced-fields");
@@ -9,6 +20,7 @@ document.getElementById("advanced-criteria-link").addEventListener("click", func
 const searchSelect = document.getElementById("search");
 const entitySelect = document.getElementById("entity");
 const fieldContainer2 = document.getElementById("field-container2");
+const fieldContainer1 = document.querySelector(".field-container1");
 const hyperLink = document.querySelector(".advanced-criteria");
 const fieldContainer = document.getElementById("field-container");
 const entityContainer = document.querySelector('.entity-container');
@@ -48,7 +60,6 @@ searchSelect.addEventListener("change", function() {
     fieldContainer.style.display = "none";
     companyContainer.style.display = "none";
     courseContainer.style.display = "none";
-
     // Show appropriate container based on the selection
     if (selectedValue === "license") {
         entityContainer.style.display = "block";
@@ -57,9 +68,11 @@ searchSelect.addEventListener("change", function() {
     } else if (selectedValue === "company") {
         companyContainer.style.display = "block";
         hyperLink.style.display="none"
+        fieldContainer1.style.display="none"
     } else if (selectedValue === "course") {
         courseContainer.style.display = "block";
         hyperLink.style.display="none"
+        fieldContainer1.style.display="none"
     }
 });
 
@@ -87,4 +100,153 @@ function populateStates() {
         statesDropdown.appendChild(option);
     });
 }
-document.addEventListener('DOMContentLoaded', populateStates);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Populate the states dropdown
+    populateStates();
+
+    document.getElementById("states").addEventListener("change", function() {
+        const selectedState = this.value; // e.g., "AL" for Alabama
+        populateDropdownsForState(selectedState);
+    });
+
+    // Function to populate dropdowns dynamically for a given state
+    function populateDropdownsForState(stateAbbreviation) {
+        const stateData = StateData[stateAbbreviation]; // Get specific state data
+
+        if (!stateData) {
+            console.warn(`No data found for state: ${stateAbbreviation}`);
+            return;
+        }
+
+        // Define dropdown elements
+        const licenseTypeSelect = document.getElementById("license-type");
+        const licenseStatusSelect = document.getElementById("license-status");
+        const businessStateSelect = document.getElementById("business-states");
+        const countySelect = document.getElementById("county");
+        const companyTypeSelect = document.getElementById("company-type");
+        const educationSelect = document.getElementById("education-type");
+        const courseSelect = document.getElementById("course-method");
+        const offeringSelect = document.getElementById("offering-state");
+        const companyyStatus= document.getElementById("company-status");
+        const companyMethods= document.getElementById("course-method");
+        const companyGroups= document.getElementById("course-group");
+        // Clear existing options in all dropdowns
+        const selects = [companyGroups,companyMethods,companyyStatus,licenseTypeSelect, licenseStatusSelect, businessStateSelect, countySelect, companyTypeSelect, educationSelect, courseSelect, offeringSelect];
+        selects.forEach(select => select.innerHTML = '<option value=""></option>');
+
+        // Populate dropdowns with state-specific data
+        populateSelect(licenseTypeSelect, stateData.licenseTypes);
+        populateSelect(licenseStatusSelect, stateData.licenseStatuses);
+        populateSelect(businessStateSelect, stateData.statesAndProvinces);
+        populateSelect(countySelect, stateData.counties);
+        populateSelect(companyTypeSelect, stateData.companyTypes);
+        populateSelect(educationSelect, stateData.educationTypes);
+        populateSelect(courseSelect, stateData.courseMethods);
+        populateSelect(offeringSelect, stateData.states);
+        populateSelect(companyyStatus, stateData.companyStatuses);
+        populateSelect(companyMethods, stateData.courseMethods);
+        populateSelect(companyGroups, stateData.courseGroups);
+    }
+ // Helper function to populate dropdown options
+ function populateSelect(selectElement, dataList) {
+    if (!dataList) return; // Handle cases where some data might be missing
+
+    dataList.forEach(data => {
+        const option = document.createElement('option');
+        option.value = data.code || data.name;
+        option.textContent = data.name;
+        selectElement.appendChild(option);
+    });
+}
+    // Show Line of Authority options based on selected license type
+    document.getElementById("license-type").addEventListener("change", function() {
+        const selectedType = this.value;
+        const loaSelect = document.getElementById("line-of-authority");
+        loaSelect.innerHTML = '<option value="">Select Line of Authority</option>';
+
+        const licenseType = AlabamaData.licenseTypes.find(type => type.code === selectedType);
+        if (licenseType && licenseType.loaTypes) {
+            licenseType.loaTypes.forEach(loa => {
+                const option = document.createElement('option');
+                option.value = loa.code;
+                option.textContent = loa.name;
+                loaSelect.appendChild(option);
+            });
+        }
+    });
+
+    // Show Line of Business options based on selected company type
+    document.getElementById("company-type").addEventListener("change", function() {
+        const selectedType = this.value;
+        const lobSelect = document.getElementById("line-of-business");
+        lobSelect.innerHTML = '<option value="">Select Line of Business</option>';
+
+        const companyType = AlabamaData.companyTypes.find(type => type.code === selectedType);
+        if (companyType && companyType.lobTypes) {
+            companyType.lobTypes.forEach(lob => {
+                const option = document.createElement('option');
+                option.value = lob.code;
+                option.textContent = lob.name;
+                lobSelect.appendChild(option);
+            });
+        } else {
+            const noLobOption = document.createElement('option');
+            noLobOption.value = "";
+            noLobOption.textContent = "No Lines of Business Available";
+            lobSelect.appendChild(noLobOption);
+        }
+    });
+
+    const providerInput = document.getElementById('provider-name');
+    const suggestionsContainer = document.getElementById('provider-suggestions');
+
+    // Function to display suggestions (filtered or full list)
+    function displaySuggestions(providers) {
+        suggestionsContainer.innerHTML = ''; // Clear previous suggestions
+
+        providers.forEach(provider => {
+            const suggestionItem = document.createElement('div');
+            suggestionItem.classList.add('suggestion-item');
+            suggestionItem.textContent = provider.name;
+
+            suggestionItem.addEventListener('click', function() {
+                providerInput.value = provider.name; // Set input value to selected provider
+                suggestionsContainer.innerHTML = ''; // Clear suggestions after selection
+                suggestionsContainer.classList.remove('show'); // Hide suggestions
+            });
+
+            suggestionsContainer.appendChild(suggestionItem);
+        });
+
+        // Show or hide suggestions based on the list length
+        if (providers.length > 0) {
+            suggestionsContainer.classList.add('show');
+        } else {
+            suggestionsContainer.classList.remove('show');
+        }
+    }
+
+    // Show full list on focus
+    providerInput.addEventListener('focus', function() {
+        displaySuggestions(AlabamaData.activeProviders);
+    });
+
+    // Filter and show suggestions on typing
+    providerInput.addEventListener('input', function() {
+        const query = providerInput.value.toLowerCase();
+        const matchingProviders = AlabamaData.activeProviders.filter(provider =>
+            provider.name.toLowerCase().includes(query)
+        );
+        displaySuggestions(matchingProviders);
+    });
+
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function(e) {
+        if (e.target !== providerInput && !suggestionsContainer.contains(e.target)) {
+            suggestionsContainer.innerHTML = ''; // Clear suggestions if clicked outside
+            suggestionsContainer.classList.remove('show'); // Hide suggestions
+        }
+    });
+});

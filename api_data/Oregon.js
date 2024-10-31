@@ -1,5 +1,5 @@
-export const Oregon_Data = {
-    state: "Oregon", 
+export const OregonData = {
+    state: "OR", 
     licenseTypes:[
         {
             "code": "PRO",

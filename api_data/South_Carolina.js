@@ -1,5 +1,5 @@
-export const South_Carolina_Data = {
-    state: "South_Carolina",
+export const SouthCarolinaData = {
+    state: "SC",
     licenseTypes:[
         {
             "code": "PRO",
