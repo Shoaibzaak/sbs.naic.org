@@ -129,9 +129,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const educationSelect = document.getElementById("education-type");
         const courseSelect = document.getElementById("course-method");
         const offeringSelect = document.getElementById("offering-state");
-
+        const companyyStatus= document.getElementById("company-status");
+        const companyMethods= document.getElementById("course-method");
+        const companyGroups= document.getElementById("course-group");
         // Clear existing options in all dropdowns
-        const selects = [licenseTypeSelect, licenseStatusSelect, businessStateSelect, countySelect, companyTypeSelect, educationSelect, courseSelect, offeringSelect];
+        const selects = [companyGroups,companyMethods,companyyStatus,licenseTypeSelect, licenseStatusSelect, businessStateSelect, countySelect, companyTypeSelect, educationSelect, courseSelect, offeringSelect];
         selects.forEach(select => select.innerHTML = '<option value=""></option>');
 
         // Populate dropdowns with state-specific data
@@ -143,6 +145,9 @@ document.addEventListener('DOMContentLoaded', function() {
         populateSelect(educationSelect, stateData.educationTypes);
         populateSelect(courseSelect, stateData.courseMethods);
         populateSelect(offeringSelect, stateData.states);
+        populateSelect(companyyStatus, stateData.companyStatuses);
+        populateSelect(companyMethods, stateData.courseMethods);
+        populateSelect(companyGroups, stateData.courseGroups);
     }
  // Helper function to populate dropdown options
  function populateSelect(selectElement, dataList) {
