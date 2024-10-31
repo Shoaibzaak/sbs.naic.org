@@ -77,6 +77,16 @@
   font-weight: 400px;
 }
 
+#states {
+  
+  border: 1px solid #ddd;
+}
+
+#search {
+
+  border: 1px solid #ddd;
+}
+
 .required {
   font-size: 0.7rem;
   margin-left: 0.3rem;
@@ -221,6 +231,7 @@
 
 .field-group select {
   padding: 0.5rem;
+  border: 1px solid #ddd;
 }
 
 .inline-fields label {

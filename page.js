@@ -4,12 +4,42 @@ import {AlaskaData} from "./api_data/alaska.js"
 import {ArizonaData} from "./api_data/arizona.js"
 import {ArkansasData } from "./api_data/arkansas.js"
 import {MarylandData } from "./api_data/maryland.js"
+import { ConnecticutData } from "./api_data/connecticut.js";
+import { DelawareData } from "./api_data/delaware.js";
+import { DistrictofColumbiaData } from "./api_data/district-of-columbia.js";
+import { GuamData } from "./api_data/guam.js";
+import { HawaiiData } from "./api_data/hawaii.js";
+import { IdahoData } from "./api_data/idaho.js";
+import { IllinoisData } from "./api_data/illinois.js";
+import { IowaData } from "./api_data/iowa.js";
+import { KansasData } from "./api_data/kansas.js";
+import { MassachusettsData } from "./api_data/massachusetts.js";
+import { MissouriData } from "./api_data/missouri.js";
+import { MontanaData } from "./api_data/montana.js";
+import { NebraskaData } from "./api_data/nebraska.js";
+import { WestVirginiaData } from "./api_data/west-virginia.js";
+import { WisconsinData } from "./api_data/wisconsin.js";
 const StateData = {
     AL: AlabamaData,
     AK: AlaskaData,
     AZ: ArizonaData,
     AR: ArkansasData,
+    CT: ConnecticutData,
+    DE: DelawareData,
+    DC: DistrictofColumbiaData,
+    GU: GuamData,
+    HI: HawaiiData,
+    ID: IdahoData,
+    IL: IllinoisData,
+    IA: IowaData,
+    KS: KansasData,
     MD: MarylandData,
+    MA: MassachusettsData,
+    MI: MissouriData,
+    MT: MontanaData,
+    NE: NebraskaData,
+    WV: WestVirginiaData,
+    WI: WisconsinData,
 };
 document.getElementById("advanced-criteria-link").addEventListener("click", function(event) {
     event.preventDefault();
